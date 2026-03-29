@@ -20,3 +20,25 @@ body {
   color: #e5e5e5;
   min-height: 100vh;
 }
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a3a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a4a;
+}
+
+/* Code blocks */
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a3a transparent;
+}

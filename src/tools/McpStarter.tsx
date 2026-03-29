@@ -1122,7 +1122,7 @@ export function McpStarter() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-5">
         {/* Left column -- Configuration */}
         <div className="space-y-4">
           {/* Language & Transport */}
@@ -1210,7 +1210,7 @@ export function McpStarter() {
                 </button>
               </div>
             </div>
-            <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg divide-y divide-[var(--color-border)] max-h-[360px] overflow-y-auto">
+            <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg divide-y divide-[var(--color-border)] max-h-[calc(100vh-420px)] overflow-y-auto">
               {TOOLS.map(tool => (
                 <label
                   key={tool.id}
@@ -1312,7 +1312,7 @@ export function McpStarter() {
           </div>
 
           <div className="flex-1 min-h-0">
-            <div className="bg-[#0d1117] border border-[var(--color-border)] rounded-lg overflow-auto h-[520px]">
+            <div className="bg-[#0d1117] border border-[var(--color-border)] rounded-lg overflow-auto h-[calc(100vh-320px)]">
               <pre className="p-4 text-[13px] font-mono text-[#d4d4d4] whitespace-pre">
                 {previewFile.endsWith('.json') || previewFile.endsWith('.toml') || previewFile.endsWith('.md') ? (
                   <code>{previewCode}</code>
