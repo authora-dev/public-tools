@@ -6,6 +6,8 @@ import { Validator } from './tools/Validator'
 import { ExposureCheck } from './tools/ExposureCheck'
 import { KeyScanner } from './tools/KeyScanner'
 import { CostCalculator } from './tools/CostCalculator'
+import { ComplianceChecker } from './tools/ComplianceChecker'
+import { McpStarter } from './tools/McpStarter'
 
 export interface ScanConfig {
   url: string
@@ -13,7 +15,7 @@ export interface ScanConfig {
   authenticated: boolean
 }
 
-export type TabId = 'inspector' | 'validator' | 'exposure' | 'keys' | 'cost'
+export type TabId = 'inspector' | 'validator' | 'exposure' | 'keys' | 'cost' | 'compliance' | 'mcp-starter'
 
 export interface TabDef {
   id: TabId
@@ -28,6 +30,8 @@ const INITIAL_TABS: TabDef[] = [
   { id: 'exposure', label: 'Exposure Check' },
   { id: 'keys', label: 'Key Scanner' },
   { id: 'cost', label: 'Cost Calculator' },
+  { id: 'compliance', label: 'Compliance' },
+  { id: 'mcp-starter', label: 'MCP Starter' },
 ]
 
 export default function App() {
@@ -78,6 +82,8 @@ export default function App() {
         )}
         {activeTab === 'keys' && <KeyScanner onBadge={updateTabBadge} />}
         {activeTab === 'cost' && <CostCalculator />}
+        {activeTab === 'compliance' && <ComplianceChecker />}
+        {activeTab === 'mcp-starter' && <McpStarter />}
       </div>
 
       <footer className="mt-10 text-center text-xs text-[var(--color-dim2)]">
